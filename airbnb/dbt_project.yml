@@ -34,4 +34,6 @@ models:
     +materialized: view
     dim:
       +materialized: table
+    scr:
+      +materialized: ephemeral
 
