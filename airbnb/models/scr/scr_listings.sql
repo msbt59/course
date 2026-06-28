@@ -4,7 +4,7 @@ SELECT * FROM {{source('airbnb','listings')}}
 SELECT 
     ID AS LISTING_ID,
     NAME AS LISTING_NAME,
-    listing_url
+    listing_url,
     ROOM_TYPE,
     MINIMUM_NIGHTS,
     HOST_ID,
