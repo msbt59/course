@@ -1,0 +1,77 @@
+with RAW_LISTING as (
+SELECT * FROM AIRBNB.RAW.RAW_LISTINGS
+)
+SELECT 
+    ID AS LISTING_ID,
+    NAME AS LISTING_URL, 
+    ROOM_TYPE,
+    MINIMUM_NIGHTS,
+    HOST_ID,
+    PRICE AS PRICE_STR,
+    CREATED_AT,
+    UPDATED_AT
+FROM RAW_LISTING
+;
+
+WITH RAW_REVIEWS AS (
+select * FROM AIRBNB.RAW.RAW_REVIEWS
+)
+SELECT 
+    LISTING_ID,
+    DATE AS REVIEW_DATE,
+    REVIEWER_NAME,
+    COMMENTS AS REVIEW_TEXT,
+    SENTIMENT REVIEW_SENTIMENT
+FROM RAW_REVIEWS
+;
+
+WITH RAW_HOSTS AS ( 
+  SELECT * FROM AIRBNB.RAW.RAW_HOSTS
+)
+SELECT
+  ID AS HOST_ID,
+  NAME AS HOST_NAME,
+  IS_SUPERHOST,
+  CREATED_AT, 
+  UPDATED_AT
+FROM
+  RAW_HOSTS
+;
+
+
+
+
+-----------------
+SELECT * FROM "AIRBNB"."DEV"."FCT_REVIEWS" WHERE listing_id=3176;
+
+INSERT INTO "AIRBNB"."RAW"."RAW_REVIEWS"
+VALUES (3176, CURRENT_TIMESTAMP(), 'Zoltan', 'excellent stay!', 'positive');
+
+
+-------------------
+UPDATE AIRBNB.RAW.RAW_LISTINGS SET MINIMUM_NIGHTS=30,
+    updated_at=CURRENT_TIMESTAMP() WHERE ID=3176;
+
+SELECT * FROM AIRBNB.DEV.SCD_RAW_LISTINGS WHERE ID=3176;
+
+
+select *
+from airbnb.raw.raw_hosts;
+
+SELECT * FROM AIRBNB.raw.raw_hosts WHERE ID=22901;
+
+
+UPDATE AIRBNB.RAW.raw_hosts SET name='Hanes',
+    updated_at=CURRENT_TIMESTAMP() WHERE ID=22901;
+
+
+SELECT * FROM AIRBNB.DEV.SCD_RAW_HOSTS WHERE ID=22901;
+
+select *
+from airbnb.dev.dim_listings_cleansed
+;
+
+select * from AIRBNB.DEV_dbt_test__audit.accepted_values_dim_listings_c_78b36cfe58abc474124fbc07688a0ea3
+;
+
+select * from AIRBNB.DEV__test_failures.consistent_created_at
