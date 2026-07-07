@@ -7,7 +7,7 @@ models:
             min_row_count: 1000
     columns:
       - name: listing_id
-        descrjption: "Unique identifier for each listing PK"
+        description: "Unique identifier for each listing PK"
         data_tests:
           - unique
           - not_null
@@ -41,6 +41,7 @@ models:
     constraints:
       - type: primary_key
         columns: ['host_id']
+        warn_unenforced: false
     columns:
       - name: host_id
         description: The id of the host. This is the primary key.
@@ -48,6 +49,7 @@ models:
         constraints:
           - type: not_null
           - type: unique
+            warn_unenforced: false
         data_tests:
           - unique
       - name: host_name
