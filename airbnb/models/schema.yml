@@ -68,3 +68,16 @@ models:
         data_type : timestamp
       - name : created_at
         data_type : timestamp
+  - name: dim_listings_w_hosts
+    data_tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          arguments:
+            compare_model: source('airbnb', 'listings')
+    columns:
+      - name: price
+        data_tests:
+          - dbt_expectations.expect_column_quantile_values_to_be_between:
+              arguments:
+                quantile: .99
+                min_value: 50
+                max_value: 500
