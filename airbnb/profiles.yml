@@ -6,7 +6,7 @@ airbnb:
       user: dbt
 
       role: TRANSFORM
-      private_key_path: /Users/mohamedsebabti/Documents/DBT_CORE/course/rsa_key.p8
+      private_key_path: /Users/mohamedsebabti/DBT_CORE/course/rsa_key.p8
 
       database: AIRBNB
       schema: DEV
