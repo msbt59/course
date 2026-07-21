@@ -47,6 +47,8 @@ models:
       +materialized: table
     scr:
       +materialized: ephemeral
+    fct:
+      +tags: ['fact']
 
 data_tests:
   +store_failures: true
