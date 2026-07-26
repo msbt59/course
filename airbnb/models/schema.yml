@@ -34,7 +34,20 @@ models:
          - positive_values
   
   - name: dim_hosts_cleanesed
-    description: Cleansed table for the Airbnb hosts
+    versions:
+      - v: 1
+        defined_in: models/dim_hosts_cleanesed.sql
+        deprecation_date: 2039-06-30
+      - v: 2
+        columns:
+          - include: '*'
+            exclude: [host_name]
+          - name: host_name
+            description: The name of the host (N/A if not available)
+            data_type: string
+            constraints:
+              - type: not_null
+    latest_version: 1
     config:
       contract:
         enforced : true
@@ -77,13 +90,15 @@ models:
       - name: price
         data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
-              column_type: number
+              arguments:
+                column_type: number
           - dbt_expectations.expect_column_quantile_values_to_be_between:
               arguments:
                 quantile: .99
                 min_value: 50
                 max_value: 500
           - dbt_expectations.expect_column_max_to_be_between:
-              max_value: 10000
+              arguments:
+                max_value: 10000
               config:
                 severity: warn
