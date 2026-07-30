@@ -4,12 +4,78 @@ airbnb:
       type: snowflake
       account: jewgttz-qw49890
       user: dbt
-
       role: TRANSFORM
-      private_key_path: /Users/mohamedsebabti/DBT_CORE/course/rsa_key.p8
-
+      #private_key_path: /Users/mohamedsebabti/DBT_CORE/course/rsa_key.p8
+      private_key: |
+        -----BEGIN PRIVATE KEY-----
+        MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCUcXi7VdTEzk+x
+        Bqzb9PMe5HTZ2zKO5b1aDtfp8Q6XzgYsOQTzoqvktfxJeVYV7OzR1manmcZPf/q8
+        nvq71j/o5wSFMOk7KpYW+JauYSu91qAXiBGm7zEgkAk4cJrhLuSuyj2uds/dydjP
+        sJfedtahRPfcDZww1Y/O9VbBXqsT7fN64Il1t5k4/nr6QpA5WQO1KV3mNisDXGuE
+        qE+HuFpn5Vd4kp7THsrvh7ObCKYjKbRG8r466OsloltgzaxGOx/tvZ2BVkGfPo5s
+        /6oFUY2H6+T7dgeN3899VWOGuIobSAFpCX6CjjvmXS64/iseXvthzd85KDTljcLn
+        ruDRXEhdAgMBAAECggEAGXFIdO1tai0FVi1zd8DIYdlc2NE73WetmG+2XKPDMUwv
+        3SkJuvt89Fanzu0Tzu68mWuizSOrbIleL7Gc/pBmhFQCP5TmSMyQDJBffTRs850D
+        c/0Pr3nMRQ1C81BDj4iCzB2gTFSTZKt5tIFLSmc6esowJGCVzn3wJ9P/omWIM4JA
+        qyOqNbGldiQo1kXJ25O53c6jcW2JlNSGF5Uaq3FUNpodMpHrxJCp8AymB+2AWAOg
+        Zvm1tRZ4ighj1tT8mw296nCpMse1yIuIlt2vIaklSl6zUGRdT4S/wwwanSsv/7M5
+        +59LkHlj5ok+r7Y4k0Uq7lnSxAV1ZG9KITuMwW5aMQKBgQDKlaKvCQwU9LuDaUEb
+        BM5zATsYa2+UAN67pNIpA33QOQw4wxhDtOBlMmHx+Ykreom04K69vpj8VuMRsK11
+        jwqGYPpuygPwrvTsh/D9/Q3ZAWLaSyo97oO0Trc2nREYTH6s6xCmhQUfUMQNkUPn
+        eMFkTMobdsnduw13dYXbLCL5MQKBgQC7lVMnhbPziOMAoJAj90LrPMPKNzVCpeQJ
+        BFkfKOmxT2cQUurwYoUa2aDBP1O/1sJj8uc8FOhdPShMSWhF5KStn8eD5Z3pKuuc
+        4hUmd2VijDjE+GyFgpLzaV/1mvf88kKrDz5m2ij6fdAeMA3OxBwEENr3j1XhqR77
+        xom48E927QKBgA+d0Vik3eWPqBTNPFOU30VGRwPu5D8IgiL85aZ7umseuq51e51c
+        iB/E7n/0uHo9i/gBifbehnSNThvC/twdFradKzD3Ka6YDhFduVoa88JStQgW2z7C
+        8CwqFT2EhhjVbL5vsGzlvCtZ0oMpO47QZDgTI1FSquUI0lTvHk5y7I9BAoGARYef
+        /vJMNWTz33OkefBY2aD4Yaf9EeszjzQRZL9hf9uStDZH5zpdZApuz7KNdHpCK5IJ
+        q/eD+auFmGFNSTrq34BuD7G4yoiiNNCITm3LIrAfCsOaVhKELb1NWFhMu3GAzK8l
+        zjHnJpIj5kyhkZaXW9pzj3eNuctaNLDus6I/kjECgYBQYvfv2pNvnCzP7/U1f1Mp
+        +nD3AYj0gA3uJgPbtSdlGlPdg1doFpCnofmPT00h+B6icSi+9A219IBeMrkznf7C
+        Z04dAA1j1UTtQjDZWKSKpMBDlw9m0JIs1flWmpZbzNZnO6o8iVq6McfECT5e4Uw5
+        qpKqgbZSqNDCw5fF39zReA==
+        -----END PRIVATE KEY-----
       database: AIRBNB
       schema: DEV
+      threads: 4
+      warehouse: COMPUTE_WH
+    prod:
+      type: snowflake
+      account: jewgttz-qw49890
+      user: dbt
+      role: TRANSFORM
+      #private_key_path: /Users/mohamedsebabti/DBT_CORE/course/rsa_key.p8
+      private_key: |
+        -----BEGIN PRIVATE KEY-----
+        MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCUcXi7VdTEzk+x
+        Bqzb9PMe5HTZ2zKO5b1aDtfp8Q6XzgYsOQTzoqvktfxJeVYV7OzR1manmcZPf/q8
+        nvq71j/o5wSFMOk7KpYW+JauYSu91qAXiBGm7zEgkAk4cJrhLuSuyj2uds/dydjP
+        sJfedtahRPfcDZww1Y/O9VbBXqsT7fN64Il1t5k4/nr6QpA5WQO1KV3mNisDXGuE
+        qE+HuFpn5Vd4kp7THsrvh7ObCKYjKbRG8r466OsloltgzaxGOx/tvZ2BVkGfPo5s
+        /6oFUY2H6+T7dgeN3899VWOGuIobSAFpCX6CjjvmXS64/iseXvthzd85KDTljcLn
+        ruDRXEhdAgMBAAECggEAGXFIdO1tai0FVi1zd8DIYdlc2NE73WetmG+2XKPDMUwv
+        3SkJuvt89Fanzu0Tzu68mWuizSOrbIleL7Gc/pBmhFQCP5TmSMyQDJBffTRs850D
+        c/0Pr3nMRQ1C81BDj4iCzB2gTFSTZKt5tIFLSmc6esowJGCVzn3wJ9P/omWIM4JA
+        qyOqNbGldiQo1kXJ25O53c6jcW2JlNSGF5Uaq3FUNpodMpHrxJCp8AymB+2AWAOg
+        Zvm1tRZ4ighj1tT8mw296nCpMse1yIuIlt2vIaklSl6zUGRdT4S/wwwanSsv/7M5
+        +59LkHlj5ok+r7Y4k0Uq7lnSxAV1ZG9KITuMwW5aMQKBgQDKlaKvCQwU9LuDaUEb
+        BM5zATsYa2+UAN67pNIpA33QOQw4wxhDtOBlMmHx+Ykreom04K69vpj8VuMRsK11
+        jwqGYPpuygPwrvTsh/D9/Q3ZAWLaSyo97oO0Trc2nREYTH6s6xCmhQUfUMQNkUPn
+        eMFkTMobdsnduw13dYXbLCL5MQKBgQC7lVMnhbPziOMAoJAj90LrPMPKNzVCpeQJ
+        BFkfKOmxT2cQUurwYoUa2aDBP1O/1sJj8uc8FOhdPShMSWhF5KStn8eD5Z3pKuuc
+        4hUmd2VijDjE+GyFgpLzaV/1mvf88kKrDz5m2ij6fdAeMA3OxBwEENr3j1XhqR77
+        xom48E927QKBgA+d0Vik3eWPqBTNPFOU30VGRwPu5D8IgiL85aZ7umseuq51e51c
+        iB/E7n/0uHo9i/gBifbehnSNThvC/twdFradKzD3Ka6YDhFduVoa88JStQgW2z7C
+        8CwqFT2EhhjVbL5vsGzlvCtZ0oMpO47QZDgTI1FSquUI0lTvHk5y7I9BAoGARYef
+        /vJMNWTz33OkefBY2aD4Yaf9EeszjzQRZL9hf9uStDZH5zpdZApuz7KNdHpCK5IJ
+        q/eD+auFmGFNSTrq34BuD7G4yoiiNNCITm3LIrAfCsOaVhKELb1NWFhMu3GAzK8l
+        zjHnJpIj5kyhkZaXW9pzj3eNuctaNLDus6I/kjECgYBQYvfv2pNvnCzP7/U1f1Mp
+        +nD3AYj0gA3uJgPbtSdlGlPdg1doFpCnofmPT00h+B6icSi+9A219IBeMrkznf7C
+        Z04dAA1j1UTtQjDZWKSKpMBDlw9m0JIs1flWmpZbzNZnO6o8iVq6McfECT5e4Uw5
+        qpKqgbZSqNDCw5fF39zReA==
+        -----END PRIVATE KEY-----
+      database: AIRBNB
+      schema: PROD
       threads: 4
       warehouse: COMPUTE_WH
   target: dev
